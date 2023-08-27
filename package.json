@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "backend del proyecto cafecito",
   "main": "index.js",
-  "type":"module",
+  "type": "module",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "dev": "nodemon --exec node index.js"
   },
   "keywords": [],
   "author": "Jose Rivadeneira",
