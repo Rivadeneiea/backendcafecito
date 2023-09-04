@@ -4,6 +4,7 @@ import cors from "cors";
 import morgan from "morgan";
 import "dotenv/config"; //permite procesar variables de entorno
 import productoRouter from "./src/routes/productos.routes.js";
+import usuarioRouter from "./src/routes/usuario.routes.js";
 // 1- configuraciones iniciales
 const app = express();
 // crear una variable
@@ -21,3 +22,4 @@ app.use(morgan("dev")); //nos da mas informacion en la terminal
 // crear rutas
 //http://localjost:4000/api/producto
 app.use("/api", productoRouter);
+app.use("/api", usuarioRouter);
