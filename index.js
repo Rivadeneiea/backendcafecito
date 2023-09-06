@@ -23,4 +23,4 @@ app.use(morgan("dev")); //nos da mas informacion en la terminal
 // crear rutas
 //http://localjost:4000/api/producto
 app.use("/api", productoRouter);
-app.use("/api", usuarioRouter);
+app.use("/api/usuario", usuarioRouter);

@@ -31,3 +31,25 @@ export const crearProducto = async (req, res) => {
     });
   }
 };
+
+export const editarProducto = async (req, res) => {
+  // extraer los parametrosde la ruta
+
+  try {
+    // ir a pedir a la BD
+    // console.log(req.params.id);
+    // console.log(req.body);
+    await Producto.findByIdAndUpdate(req.params.id, req.body);
+    const productoNuevo = new Producto(req.body);
+    // guardar el producto nuevo en la BD
+    // await productoNuevo.save();
+    res.status(200).json({
+      mensaje: "elprocto fue creado correctamente",
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(400).json({
+      mensaje: "no se puede editar el producto",
+    });
+  }
+};
