@@ -53,3 +53,23 @@ export const editarProducto = async (req, res) => {
     });
   }
 };
+
+export const borrarProducto = async (req, res) => {
+  // extraer los parametrosde la ruta
+
+  try {
+    // ir a pedir a la BD
+    // console.log(req.params.id);
+    // console.log(req.body);
+    await Producto.findByIdAndDelete(req.params.id);
+
+    res.status(200).json({
+      mensaje: "elprocto fue eliminado correctamente",
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(400).json({
+      mensaje: "no se puede eliminar el producto",
+    });
+  }
+};
