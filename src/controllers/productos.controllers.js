@@ -1,5 +1,5 @@
 import Producto from "../models/producto.js";
-
+// GET
 export const listarProductos = async (req, res) => {
   try {
     // ir a pedir a la BD

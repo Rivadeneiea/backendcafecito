@@ -22,7 +22,7 @@ export const login = async (req, res) => {
     if (!passwordValido) {
       return res
         .status(400)
-        .json({ menssaje: "Correo o password invalido - correo" });
+        .json({ menssaje: "Correo o password invalido - password" });
     }
     //responder que el usuario es correcto
     res.status(200).json({
