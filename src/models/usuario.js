@@ -3,26 +3,21 @@ import mongoose, { Schema } from "mongoose";
 const usuarioSchema = new Schema({
   nombreUsuario: {
     type: String,
+    maxlength: 30,
     required: true,
-    unique: true,
-    minLength: 8,
-    maxLength: 16,
   },
   email: {
     type: String,
-    required: true,
+    maxlength: 200,
     unique: true,
-    minLength: 8,
-    maxLength: 16,
+    required: true,
   },
   password: {
     type: String,
     required: true,
-    unique: true,
-    minLength: 8,
-    maxLength: 16,
   },
 });
 
 const Usuario = mongoose.model("usuario", usuarioSchema);
+
 export default Usuario;
