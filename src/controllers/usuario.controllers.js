@@ -20,8 +20,9 @@ export const login = async (req, res) => {
     //desencriptar y comparar password
     const passwordValido = bcrypt.compareSync(password, usuario.password);
     if (!passwordValido) {
-      return;
-      res.status(400).json({ menssaje: "Correo o password invalido - correo" });
+      return res
+        .status(400)
+        .json({ menssaje: "Correo o password invalido - correo" });
     }
     //responder que el usuario es correcto
     res.status(200).json({

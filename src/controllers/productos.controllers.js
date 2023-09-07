@@ -22,12 +22,12 @@ export const crearProducto = async (req, res) => {
     // guardar el producto nuevo en la BD
     await productoNuevo.save();
     res.status(201).json({
-      mensaje: "elprocto fue creado correctamente",
+      mensaje: "el producto fue creado correctamente",
     });
   } catch (error) {
     console.log(error);
     res.status(400).json({
-      mensaje: "el procto no fue creado correctamente",
+      mensaje: "el producto no fue creado correctamente",
     });
   }
 };
